@@ -3,11 +3,18 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-app": {
+    "simple-store": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
         }
       },
       "root": "",
@@ -17,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/my-app",
+            "outputPath": "dist/simple-store",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -32,12 +39,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -67,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "my-app:build:production"
+              "buildTarget": "simple-store:build:production"
             },
             "development": {
-              "buildTarget": "my-app:build:development"
+              "buildTarget": "simple-store:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "my-app:build"
+            "buildTarget": "simple-store:build"
           }
         },
         "test": {
@@ -104,6 +106,6 @@
     }
   },
   "cli": {
-    "analytics": "9786d4b7-a827-4d08-963c-a5db234ab824"
+    "analytics": false
   }
 }
