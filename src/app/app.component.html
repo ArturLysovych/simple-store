@@ -1,2 +1,6 @@
-<h2>{{ title }}</h2>
-<app-product></app-product>
+<div class="max-w-2xl container mx-auto p-[20px]">
+    <h2 class="text-lg text-center font-bold">{{ title | titlecase }}</h2>
+    
+    <app-product [product]="products[0]"></app-product>
+    <app-product [product]="products[1]"></app-product>
+</div>
