@@ -1,29 +1,9 @@
-<div class="w-full flex justify-center items-center">
-    <div class="max-w-2xl container mx-auto p-[20px]">
-        <app-global-error></app-global-error>
+<app-global-error></app-global-error>
 
-        <h2 class="text-lg text-center font-bold">{{ title | titlecase }}</h2>
+<app-navigation></app-navigation>
 
-        <input 
-            type="text" 
-            class="mb-2 border py-2 px-4 w-full" 
-            placeholder="Filter products" 
-            [(ngModel)]="term"
-        >
-        
-        <p *ngIf="loading" class="text-center text-lg">Loading ...</p>
+<div class="w-full flex justify-center items-center mt-[50px]">
     
-        <div *ngIf="productsService.products">
-            <app-product 
-                *ngFor="let product of productsService.products | filterProducts:term; let i = index" 
-                [product]="product"
-            ></app-product>
-        </div>
-        <app-modal title="Create new product" *ngIf="modalService.inVisible$ | async">
-            <app-create-product></app-create-product>
-        </app-modal>
-        <button class="rounded-full bg-red-700 text-white fixed right-5 bottom-5 py-2 px-4"
-            (click)="modalService.open()"
-        >+</button>
-    </div>
+    <router-outlet></router-outlet>
+
 </div>
