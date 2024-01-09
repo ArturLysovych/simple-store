@@ -19,5 +19,8 @@
                 [product]="product"
             ></app-product>
         </div>
+        <app-modal title="Create new product" *ngIf="modalService.inVisible$ | async">
+            <app-create-product></app-create-product>
+        </app-modal>
     </div>
 </div>

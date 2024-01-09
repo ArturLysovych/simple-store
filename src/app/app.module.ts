@@ -8,7 +8,10 @@ import { ProductComponent } from './components/products/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GlobalErrorComponent } from './components/global-error/global-error.component';
 import { FilterProductsPipe } from './pipes/filter-products.pipe';
-import { ModelComponent } from './components/model/model.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { CreateProductComponent } from './components/create-product/create-product.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FocusDirective } from './directives/focus.directive';
 
 @NgModule({
   declarations: [
@@ -16,12 +19,15 @@ import { ModelComponent } from './components/model/model.component';
     ProductComponent,
     GlobalErrorComponent,
     FilterProductsPipe,
-    ModelComponent
+    ModalComponent,
+    CreateProductComponent,
+    FocusDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
