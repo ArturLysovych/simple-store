@@ -8,9 +8,7 @@ import { ModalService } from '../../services/modal.service';
 })
 export class ProductPageComponent {
   title = 'simple store';
-  // products: IProduct[] = [];
   loading = false;
-  // products$: Observable<IProduct[]>
   term = ''
 
   constructor(
@@ -22,9 +20,6 @@ export class ProductPageComponent {
 
   ngOnInit(): void {
     this.loading = true;
-    // this.products$ = this.productsService.getAll().pipe(
-    //   tap(() => { this.loading = false })
-    // );
     this.productsService.getAll().subscribe(() => {
       this.loading = false;
     })

@@ -6,10 +6,10 @@ import { ErrorService } from '../../services/error.service';
   templateUrl: './global-error.component.html',
 })
 export class GlobalErrorComponent implements OnInit {
- constructor(public errorService: ErrorService) {
-
- }
- ngOnInit(): void {
-   
- }
+  constructor(public errorService: ErrorService) {
+  
+  }
+  ngOnInit(): void {
+    
+  }
 }
