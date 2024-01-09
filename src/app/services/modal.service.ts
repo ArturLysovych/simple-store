@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ModalService {
-  inVisible$ = new BehaviorSubject<boolean>(true)
+  inVisible$ = new BehaviorSubject<boolean>(false)
 
   open() {
     this.inVisible$.next(true);
