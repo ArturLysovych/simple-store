@@ -1,10 +1,23 @@
-<div class="max-w-2xl container mx-auto p-[20px]">
-    <h2 class="text-lg text-center font-bold">{{ title | titlecase }}</h2>
-    
-    <p *ngIf="loading" class="text-center text-lg">Loading ...</p>
+<div class="w-full flex justify-center items-center">
+    <div class="max-w-2xl container mx-auto p-[20px]">
+        <app-global-error></app-global-error>
 
-    <app-product 
-        *ngFor="let product of products$ | async; let i = index" 
-        [product]="product"
-    ></app-product>
+        <h2 class="text-lg text-center font-bold">{{ title | titlecase }}</h2>
+
+        <input 
+            type="text" 
+            class="mb-2 border py-2 px-4 w-full" 
+            placeholder="Filter products" 
+            [(ngModel)]="term"
+        >
+        
+        <p *ngIf="loading" class="text-center text-lg">Loading ...</p>
+    
+        <div *ngIf="products$ | async as products">
+            <app-product 
+                *ngFor="let product of products | filterProducts:term; let i = index" 
+                [product]="product"
+            ></app-product>
+        </div>
+    </div>
 </div>
